@@ -1,4 +1,4 @@
 import { createApp } from 'vue';
-import Contador from '../components/Contador.js';
+import App from '../components/App.js';
 
-createApp(Contador).mount("#app")
+createApp(App).mount("#app")

@@ -38,6 +38,7 @@ export default {
     resetar() {
       this.parar();
       this.iniciar();
+    }
   },
   beforeDestroy() {
     this.parar();

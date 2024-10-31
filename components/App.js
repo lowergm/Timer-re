@@ -9,10 +9,12 @@ export default {
     }
   },
   methods: {
-    aumentar() {
+    iniciar() {
       if (!this.rodando){
         this.rodando = true;
         this.segundos = 0;
+        this.minutos = 0;
+        this.horas = 0;
         this.intervalo = setInterval(()=>{
           this.segundos += 1;
           if (this.segundos == 60){
@@ -32,7 +34,10 @@ export default {
         clearInterval(this.intervalo);
       this.rodando = false;
       }
-    }
+    },
+    resetar() {
+      this.parar();
+      this.iniciar();
   },
   beforeDestroy() {
     this.parar();
@@ -41,8 +46,9 @@ export default {
   <div>
     <h1>Timer-re</h1>
     <p><span>{{ String(horas).padStart(2, "0") }}:{{ String(minutos).padStart(2, "0") }}:{{ String(segundos).padStart(2, "0") }}</span></p>
-    <button @click="aumentar">Iniciar</button>
+    <button @click="iniciar">Iniciar</button>
     <button @click="parar">Parar</button>
+    <button @click="resetar">Resetar</button>
   </div>
   `,
 }

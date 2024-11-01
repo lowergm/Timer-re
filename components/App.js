@@ -36,8 +36,9 @@ export default {
       }
     },
     resetar() {
-      this.parar();
-      this.iniciar();
+      this.horas = 0;
+      this.minutos = 0;
+      this.segundos = 0;
     }
   },
   beforeDestroy() {

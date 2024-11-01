@@ -36,6 +36,7 @@ export default {
       }
     },
     resetar() {
+      this.rodando = false;
       this.horas = 0;
       this.minutos = 0;
       this.segundos = 0;
